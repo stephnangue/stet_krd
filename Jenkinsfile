@@ -10,32 +10,48 @@ pipeline {
         stage('QA Test') {
             parallel {
                 stage('Quality') {
-                    echo "Running Quality tests" 
+                    steps{
+                        echo "Running Quality tests"
+                    }
                 }
                 stage('Functional') {
-                    echo "Running Functional tests"
+                    steps{
+                        echo "Running Functional tests"
+                    }                  
                 }
                 stage('Security') {
-                    echo "Running Security tests"
+                    steps{
+                         echo "Running Security tests"
+                    }                      
                 }
                 stage('Performance') {
-                    echo "Running Performance tests"
+                    steps{
+                         echo "Running Performance tests"
+                    }                   
                 }
             }
         }
         stage('KAL Validation') {
-            parallel {
+             parallel {
                 stage('Quality') {
-                    echo "Running Quality tests" 
+                    steps{
+                        echo "Running Quality tests"
+                    }
                 }
                 stage('Functional') {
-                    echo "Running Functional tests"
+                    steps{
+                        echo "Running Functional tests"
+                    }                  
                 }
                 stage('Security') {
-                    echo "Running Security tests"
+                    steps{
+                         echo "Running Security tests"
+                    }                      
                 }
                 stage('Performance') {
-                    echo "Running Performance tests"
+                    steps{
+                         echo "Running Performance tests"
+                    }                   
                 }
             }
         }
