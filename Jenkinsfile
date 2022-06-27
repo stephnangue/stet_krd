@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Deploy to QA') {
             steps{
-                echo "Deploying to QA"
+                echo "SABR_MOTEUR_VERSION = ${params.SABR_MOTEUR_VERSION}"
+                echo "SABR_IHM_VERSION = ${params.SABR_IHM_VERSION}"
+                echo "SIMULATEUR_VERSION = ${params.SIMULATEUR_VERSION}"
             }
         }
         stage('QA Test') {
