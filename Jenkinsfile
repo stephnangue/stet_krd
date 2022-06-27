@@ -31,6 +31,11 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to KAL') {
+            steps{
+                echo "Deploying to KAL"
+            }
+        }
         stage('KAL Validation') {
              parallel {
                 stage('Quality') {
