@@ -8,36 +8,36 @@ pipeline {
             }
         }
         stage('QA Test') {
-            parallel(
-                'Quality': {
+            parallel {
+                stage('Quality') {
                     echo "Running Quality tests" 
-                },
-                'Functional': {
+                }
+                stage('Functional') {
                     echo "Running Functional tests"
-                },
-                'Security': {
+                }
+                stage('Security') {
                     echo "Running Security tests"
-                },
-                'Performance': {
+                }
+                stage('Performance') {
                     echo "Running Performance tests"
                 }
-            )
+            }
         }
         stage('KAL Validation') {
-            parallel(
-                'Quality': {
+            parallel {
+                stage('Quality') {
                     echo "Running Quality tests" 
-                },
-                'Functional': {
+                }
+                stage('Functional') {
                     echo "Running Functional tests"
-                },
-                'Security': {
+                }
+                stage('Security') {
                     echo "Running Security tests"
-                },
-                'Performance': {
+                }
+                stage('Performance') {
                     echo "Running Performance tests"
                 }
-            )
+            }
         }
         stage('Review') {
             steps{
