@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Deploy to QA') {
             steps{
-                echo "Deploying to QA"
+                echo "Deploying to QA" + ${paramA}
             }
         }
         stage('QA Test') {
