@@ -1,10 +1,20 @@
 pipeline {
-  agent any
+    agent any
+    parameters {
+        string(name: 'SABR_MOTEUR_VERSION', defaultValue: '1.1.1', description: 'Version du moteur SABr')
 
+        string(name: 'SABR_IHM_VERSION', defaultValue: '2.2.2', description: 'Version de SABr IHM')
+
+        string(name: 'SIMULATEUR_VERSION', defaultValue: '3.3.3', description: 'Version du simulateur SABr')
+    }
     stages {
         stage('Deploy to QA') {
             steps{
-              sh 'printenv'
+              echo "Hello ${params.SABR_MOTEUR_VERSION}"
+              
+              echo "Hello ${params.SABR_IHM_VERSION}"
+              
+              echo "Hello ${params.SIMULATEUR_VERSION}"
             }
         }
         stage('QA Test') {
