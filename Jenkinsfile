@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Deploy to QA') {
             steps{
-              echo "SABR_MOTEUR_VERSION = ${SABR_MOTEUR_VERSION}"
-              echo "SABR_IHM_VERSION = ${SABR_IHM_VERSION}"
-              echo "SIMULATEUR_VERSION = ${SIMULATEUR_VERSION}"
+              sh 'printenv'
             }
         }
         stage('QA Test') {
